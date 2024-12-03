@@ -589,7 +589,7 @@ if (opt$analysis == 'splicing') {
 
   tarbase.ssm.intersect <- bed_intersect_data_frames(tarBase.v9, ssm.bed)
   tarbase.ssm.intersect <- tarbase.ssm.intersect[tarbase.ssm.intersect$V1 != "chrMT",]
-  tarbase.ssm.intersect <- tarbase.ssm.intersect[tarbase.ssm.intersect$V3 - tarbase.ssm.intersect$V2 == 12,]
+  #tarbase.ssm.intersect <- tarbase.ssm.intersect[tarbase.ssm.intersect$V3 - tarbase.ssm.intersect$V2 == 12,]
   filtered_data <- unique(tarbase.ssm.intersect[,c(6,7)])
   
   ##### If SSMs for miRNAs exist in input, Generate the wildtype and mutated genomic sequences and write them to separate FASTA files #####
