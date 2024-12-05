@@ -11,11 +11,13 @@ if (!require("Biostrings"))
   BiocManager::install("Biostrings")
 if (!require("BSgenome.Hsapiens.UCSC.hg38"))
   BiocManager::install("BSgenome.Hsapiens.UCSC.hg38")
+if (!require("GenomicRanges"))
+  BiocManager::install("GenomicRanges")
 
-packages <- c('data.table', 'optparse', 'dplyr','GenomicRanges','seqinr','stringr')
+packages <- c('data.table', 'optparse', 'dplyr','seqinr','stringr')
 suppressPackageStartupMessages(invisible(install.packages(setdiff(packages, rownames(installed.packages())))))
 
-packages <- c(packages,'rtracklayer','Biostrings','BSgenome.Hsapiens.UCSC.hg38','biomaRt')
+packages <- c(packages,'biomaRt','rtracklayer','Biostrings','BSgenome.Hsapiens.UCSC.hg38')
 suppressPackageStartupMessages(invisible(lapply(packages, require, character.only = TRUE, quietly = TRUE)))
 
 
